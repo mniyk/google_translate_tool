@@ -26,13 +26,13 @@ class TranslationWidget(QtWidgets.QWidget):
         # 英語→日本語
         self.en_jp_radio = QtWidgets.QRadioButton('英語 → 日本語', self)
         self.en_jp_radio.setChecked(True)
-        self.en_jp_radio.move(30, 17)
+        self.en_jp_radio.move(30, 12)
         self.en_jp_radio.setStyleSheet('color: white;')
         self.main_layout.addWidget(self.en_jp_radio)
 
         # 日本語→英語
         self.jp_en_radio = QtWidgets.QRadioButton('日本語 → 英語', self)
-        self.jp_en_radio.move(150, 17)
+        self.jp_en_radio.move(155, 12)
         self.jp_en_radio.setStyleSheet('color: white;')
         self.main_layout.addWidget(self.jp_en_radio)
 
@@ -40,10 +40,16 @@ class TranslationWidget(QtWidgets.QWidget):
         self.paste_btn = QtWidgets.QPushButton('ペースト', self)
         self.paste_btn.resize(80, 20)
         self.paste_btn.move(320, 15)
-        self.paste_btn.setStyleSheet(
-            'background-color: white;'
-            'border-radius: 5px 5px 5px 5px;'
-        )
+        self.paste_btn.setObjectName('paste_btn')
+        self.paste_btn.setStyleSheet('''
+            #paste_btn {
+                background-color: white;
+                border-radius: 5px 5px 5px 5px;
+            }
+            #paste_btn:hover {
+                background-color: #08ffc8;
+            }
+        ''')
         self.paste_btn.clicked.connect(self.paste_text)
         self.main_layout.addWidget(self.paste_btn)
 
@@ -51,10 +57,16 @@ class TranslationWidget(QtWidgets.QWidget):
         self.clear_btn = QtWidgets.QPushButton('クリア', self)
         self.clear_btn.resize(80, 20)
         self.clear_btn.move(410, 15)
-        self.clear_btn.setStyleSheet(
-            'background-color: white;'
-            'border-radius: 5px 5px 5px 5px;'
-        )
+        self.clear_btn.setObjectName('clear_btn')
+        self.clear_btn.setStyleSheet('''
+            #clear_btn {
+                background-color: white;
+                border-radius: 5px 5px 5px 5px;
+            }
+            #clear_btn:hover {
+                background-color: #08ffc8;
+            }
+        ''')
         self.clear_btn.clicked.connect(self.clear_text)
         self.main_layout.addWidget(self.clear_btn)
 
@@ -63,8 +75,8 @@ class TranslationWidget(QtWidgets.QWidget):
         self.before_translation.resize(470, 60)
         self.before_translation.move(25, 40)
         self.before_translation.setStyleSheet(
-            'background-color: #121212;'
-            'color: white;'
+            'background-color: #fff;'
+            'color: black;'
         )
         self.before_translation.setText('')
         self.before_translation.setPlaceholderText('翻訳前のテキスト')
@@ -75,10 +87,16 @@ class TranslationWidget(QtWidgets.QWidget):
         self.copy_btn = QtWidgets.QPushButton('コピー', self)
         self.copy_btn.resize(80, 20)
         self.copy_btn.move(410, 105)
-        self.copy_btn.setStyleSheet(
-            'background-color: white;'
-            'border-radius: 5px 5px 5px 5px;'
-        )
+        self.copy_btn.setObjectName('copy_btn')
+        self.copy_btn.setStyleSheet('''
+            #copy_btn {
+                background-color: white;
+                border-radius: 5px 5px 5px 5px;
+            }
+            #copy_btn:hover {
+                background-color: #08ffc8;
+            }
+        ''')
         self.copy_btn.clicked.connect(self.copy_text)
         self.main_layout.addWidget(self.copy_btn)
 
@@ -87,8 +105,8 @@ class TranslationWidget(QtWidgets.QWidget):
         self.after_translation_text.resize(470, 60)
         self.after_translation_text.move(25, 130)
         self.after_translation_text.setStyleSheet(
-            'background-color: #121212;'
-            'color: white;'
+            'background-color: #fff;'
+            'color: black;'
         )
         self.after_translation_text.setText('')
         self.after_translation_text.setReadOnly(True)
