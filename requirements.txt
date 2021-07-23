@@ -1,3 +1,4 @@
+altgraph==0.17
 certifi==2020.12.5
 chardet==3.0.4
 googletrans==4.0.0rc1
@@ -9,6 +10,8 @@ httpcore==0.9.1
 httpx==0.13.3
 hyperframe==5.2.0
 idna==2.10
+pyinstaller==4.4
+pyinstaller-hooks-contrib==2021.2
 pyperclip==1.8.2
 PyQt5==5.15.4
 PyQt5-Qt5==5.15.2

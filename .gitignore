@@ -2,4 +2,10 @@
 .idea
 
 # Current project files
+__pycache__
 venv
+
+# Pyinstaller files
+main.spec
+dist
+build
